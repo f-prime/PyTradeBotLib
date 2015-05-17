@@ -23,5 +23,3 @@ class Bot:
     def trade(self):
         self.driver.get("http://steamcommunity.com/profiles/76561198104150539")
 
-bot = Bot()
-bot.main()
