@@ -34,5 +34,7 @@ class Bot:
         self.driver.get("http://steamcommunity.com/profiles/{}/tradeoffers/".format(self.steamid))
         tradeUrl = re.findall("javascript:ShowTradeOffer(.*);", self.driver.page_source)[0].replace("(", '').replace("'", '').replace(")",'').replace(" ", '')
         self.driver.get("https://steamcommunity.com/tradeoffer/{}/".format(tradeUrl))
+        time.sleep(1)
         self.driver.find_element_by_id("you_notready").click() 
+        time.sleep(1)
         self.driver.find_element_by_id("trade_confirmbtn").click()
